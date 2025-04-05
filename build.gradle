@@ -9,6 +9,10 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.apache.camel.quarkus:camel-quarkus-azure-servicebus'
+    implementation 'io.quarkiverse.rabbitmqclient:quarkus-rabbitmq-client:3.2.1'
+    implementation 'org.apache.camel.quarkus:camel-quarkus-spring-rabbitmq'
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:quarkus-camel-bom:${quarkusPlatformVersion}")
     implementation 'io.quarkus:quarkus-kafka-client'
     implementation 'io.quarkus:quarkus-messaging-kafka'
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
