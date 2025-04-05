@@ -1,8 +1,8 @@
 package jaidsonmda.dev.messaging.kafka;
 
+import io.smallrye.reactive.messaging.MutinyEmitter;
 import jaidsonmda.dev.messaging.MessageProducer;
 
-import io.smallrye.reactive.messaging.annotations.Emitter;
 import io.smallrye.reactive.messaging.kafka.KafkaRecord;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -14,7 +14,7 @@ public class KafkaMessageProducer implements MessageProducer {
     @Inject
     @Channel("kafka-out")
             @SuppressWarnings({})
-    Emitter<String> emitter;
+    MutinyEmitter<String> emitter;
 
     @Override
     public void sendMessage(String topic, String message) {
